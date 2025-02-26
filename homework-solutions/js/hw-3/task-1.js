@@ -51,6 +51,7 @@
 25. Вывести в консоль тип данных item_7 в виде ——  “item_7 == ”  item_7,  “item_7_type == ”  item_7_type ——  
 
 */
+"use strict";
 let item_1;
 item_1 = 5;
 console.log(item_1);
