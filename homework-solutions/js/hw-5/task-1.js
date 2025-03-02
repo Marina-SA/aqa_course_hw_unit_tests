@@ -30,9 +30,13 @@ console.log(evenNumbersResult);
 
 let smilePatternResult = '';
 for(let i = 1; i <= 5; i ++){
-     smilePatternResult += ":)" ;
-     console.log(smilePatternResult);
+    for(let j = 1; j <= i; j ++){
+        smilePatternResult += ":)" ;
+    }
+    smilePatternResult += "\n"
 }
+console.log(smilePatternResult);
+smilePatternResult = smilePatternResult.trim();
 
 
 
@@ -44,6 +48,6 @@ for(let i = 1; i <= 5; i ++){
 const text = 'Hello! I am a JS student!';
 let replaceSpacesWithOneResult = '';
 replaceSpacesWithOneResult = text.replaceAll(" ", "1");
-console.log(replaceSpacesWithOneResult);
+// console.log(replaceSpacesWithOneResult);
 
  export { evenNumbersResult, smilePatternResult, replaceSpacesWithOneResult }; 
