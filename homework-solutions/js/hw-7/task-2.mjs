@@ -5,9 +5,10 @@
 
 function isPalindrom(word) {
   // Ваш код
-// функциф: цикл который проверяет буквы с лева на право и с право на лево и оба вариант должны быть равны
-if (word === (word.split("").reverse().join(""))){return "это полиндром";}
-else {return "это не полиндром"}
+if (typeof word !== "string") return false; //проверить, что передаем только тип данных - строка
+const lower = word.toLowerCase();            // приводим к нижнему регистру
+if (lower === (lower.split("").reverse().join(""))){return true;}
+else {return false}
 
 }
 console.log(isPalindrom("radar"));
@@ -18,24 +19,27 @@ console.log(isPalindrom("radar"));
  и возвращает слово с наибольшим количеством букв. 
  Если таких слов несколько - возвращает их все.
 */
-// let a = "Без труда не вытащишь и рыбку из пруда"
+let a = "Без труда не вытащишь и рыбку из пруда"
 
-// function findLongestWords(sentence) {
-//   let words = sentence.split(" "); // Разбиваем предложение на массив слов
-//   let longestWords = []; // Массив для хранения самых длинных слов
-//   let maxLength = 0; // Переменная для отслеживания максимальной длины слова
+function findLongestWords(sentence) {
+  if (typeof sentence !== "string" || sentence.trim() === "") {  // проверяем - что это строка и не пустая
+    return [];
+  }
+  const words = sentence.trim().split(/\s+/); // Разбиваем предложение на массив слов
+  let longestWords = [""]; // Массив для хранения самых длинных слов
+  let maxLength = 0; // Переменная для отслеживания максимальной длины слова
 
-//   for (let word of words) {
-//     if (word.length > maxLength) {
-//       maxLength = word.length; // Обновляем максимальную длину
-//       longestWords = [word]; // Очищаем массив и добавляем новое длинное слово
-//     } else if (word.length === maxLength) {
-//       longestWords.push(word); // Добавляем слово, если оно такой же длины
-//     }
-//   }
+  for (let word of words) {
+    if (word.length > maxLength) {
+      maxLength = word.length; // Обновляем максимальную длину
+      longestWords = [word]; // Очищаем массив и добавляем новое длинное слово
+    } else if (word.length === maxLength) {
+      longestWords.push(word); // Добавляем слово, если оно такой же длины
+    }
+  }
 
-//   return longestWords;
-// }
-// console.log(findLongestWords(a));
+  return longestWords;
+}
+console.log(findLongestWords(a));
 
 export { isPalindrom, findLongestWords };
