@@ -3,7 +3,9 @@
     "target": "ESNext",
     "module": "NodeNext",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowJs": true,
+    "noEmit": true
   },
   "include": ["tests", "homework-solutions"],
   "exclude": ["node_modules"]
